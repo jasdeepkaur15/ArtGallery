@@ -1,0 +1,35 @@
+<h1>Artist's profiles</h1>
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<%@profiles.each do |profile|%>
+	<tr>
+		<td><%= profile.id %></td>
+		<td><%= profile.name.capitalize %></td>
+		<td><%= profile.description .capitalize%></td>
+    <td><%= link_to 'Delete', profile_path(profile.id), class: 'btn btn-danger', method: :DELETE, data: { confirm: 'Are you sure?' } %></td>
+  	</tr>
+<%end%>
+</table>
+<%= link_to 'Add Your profiles', :new_profile, class: 'btn btn-primary'%>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
