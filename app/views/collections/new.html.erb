@@ -1,0 +1,13 @@
+<h1>Collecions </h1>
+<%= form_with scope: @collection, url: :profile_collections, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p> 
+  <p>
+    <%= form.file_field :pro_pic%>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

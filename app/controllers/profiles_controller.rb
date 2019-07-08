@@ -19,6 +19,9 @@ class ProfilesController < ApplicationController
 		@profile = Profile.destroy(params[:id])
 		redirect_to @profile
 	end
+	def show
+		@profile = Profile.find(params[:id])
+	end
 private
 	def permitted_params
 		params.require(:profile).permit(:name, :description)
