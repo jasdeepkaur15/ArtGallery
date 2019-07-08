@@ -1,0 +1,8 @@
+<%= form_with scope: @photo, url: :profile_collection_photos, local: true do |form| %>
+  <p>
+	<%= form.file_field :avatar%>
+	<%= form.label :name%>
+	<%= form.text_field :name%>
+    <%= form.submit %>
+  </p>
+<% end %>

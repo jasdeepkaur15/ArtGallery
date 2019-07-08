@@ -8,7 +8,7 @@
 
 <%@profiles.each do |profile|%>
 	<tr>
-		<td><%= profile.id %></td>
+    <td><%=link_to profile.id , profile_path(profile.id)%></a></td>
 		<td><%= profile.name.capitalize %></td>
 		<td><%= profile.description .capitalize%></td>
     <td><%= link_to 'Delete', profile_path(profile.id), class: 'btn btn-danger', method: :DELETE, data: { confirm: 'Are you sure?' } %></td>

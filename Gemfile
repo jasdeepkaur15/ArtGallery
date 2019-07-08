@@ -8,7 +8,8 @@ gem 'rails', '~> 5.2.3'
 gem 'byebug'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-
+gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+gem 'mini_magick'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'

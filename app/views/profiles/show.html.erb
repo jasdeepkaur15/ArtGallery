@@ -1,0 +1,19 @@
+Name: <h1><%=@profile.name%></h1>
+Description<h2><%=@profile.description%></h2>
+<%= link_to 'Add new Collections', new_profile_collection_path(@profile.id), style: 'float: right'%>
+Collections:
+<div>
+	<% @profile.collections.each do |collection|%>
+		<div class="card">
+		  	<%=link_to image_tag(collection.pro_pic.url(:thumb), {:style => "margin-left:20%;"}), profile_collection_photos_path(@profile.id,collection.id) %>
+		  <div class="container">
+
+		    <h4><b><%= collection.name%></b></h4>
+		    <%= link_to 'add photos to '+collection.name, new_profile_collection_photo_path(@profile.id,collection.id)%> 
+		   	<%= link_to 'expand Gallery', profile_collection_photos_path(@profile.id,collection.id)%> 
+		  </div>
+		</div>
+	<%end%>
+</div>
+
+<style>
