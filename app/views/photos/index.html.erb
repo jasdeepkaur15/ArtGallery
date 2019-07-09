@@ -1,8 +1,8 @@
-<div>
+<div class="wrapper">
 <% @photos.each do |photo|%>
 <div class="card">
   <!-- <img src="img_avatar.png" alt="Avatar" style="width:100%"> -->
-  <%= image_tag(photo.avatar.url(:thumb)) if photo.avatar? %>
+  <%= link_to image_tag(photo.avatar.url(:thumb), {:style => "width:100%"}), profile_collection_photo_path(@collection.profile_id,@collection.id,photo.id) %>
   <div class="container"> 
     <h4><b><%=link_to photo.name, profile_collection_photo_path(@collection.profile_id,@collection.id,photo.id)%></b></h4> 
     <p>Architect & Engineer</p> 

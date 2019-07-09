@@ -16,7 +16,7 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 20%;
+  width: 100%;
 }
 
 .card:hover {
@@ -25,4 +25,9 @@
 
 .container {
   padding: 2px 16px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
 }

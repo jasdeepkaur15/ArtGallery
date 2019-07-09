@@ -1,19 +1,30 @@
-Name: <h1><%=@profile.name%></h1>
-Description<h2><%=@profile.description%></h2>
-<%= link_to 'Add new Collections', new_profile_collection_path(@profile.id), style: 'float: right'%>
-Collections:
-<div>
-	<% @profile.collections.each do |collection|%>
-		<div class="card">
-		  	<%=link_to image_tag(collection.pro_pic.url(:thumb), {:style => "margin-left:20%;"}), profile_collection_photos_path(@profile.id,collection.id) %>
-		  <div class="container">
-
-		    <h4><b><%= collection.name%></b></h4>
-		    <%= link_to 'add photos to '+collection.name, new_profile_collection_photo_path(@profile.id,collection.id)%> 
-		   	<%= link_to 'expand Gallery', profile_collection_photos_path(@profile.id,collection.id)%> 
-		  </div>
-		</div>
-	<%end%>
+<div class="row">
+	<div class="col-sm-4">
+		<img src="/uploads/tmp/user_pic.jpeg">
+	</div>
+	<div class="col-sm-8">
+		Name: <h1><%=@profile.name%></h1>
+		Description<h2><%=@profile.description%></h2>
+	</div>
 </div>
+<div style= "margin-top: 15px">
+	<%= link_to 'Add new Collections', new_profile_collection_path(@profile.id), style: 'float: right'%>
+	Collections:
+	<div class="wrapper">
+		<% @profile.collections.each do |collection|%>
+			<div class="card">
+			  	<%=link_to image_tag(collection.pro_pic.url, {:style => "width:100%"}), profile_collection_photos_path(@profile.id,collection.id) %>
+			  <div class="container">
 
+			    <h4><b><%= collection.name%></b></h4>
+			  </div>
+
+			    <div class="btn-group">
+			    <%= link_to 'ADD PHOTOS', new_profile_collection_photo_path(@profile.id,collection.id), class: 'btn btn-warning'%> 
+			   	<%= link_to 'SEE PHOTOS', profile_collection_photos_path(@profile.id,collection.id), class: 'btn btn-secondary'%>
+			   	</div> 
+			</div>
+		<%end%>
+	</div>
+</div>
 <style>
