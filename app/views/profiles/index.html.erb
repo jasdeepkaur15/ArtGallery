@@ -9,15 +9,17 @@
 <%@profiles.each do |profile|%>
 	<tr>
     <td><%=link_to profile.id , profile_path(profile.id)%></a></td>
-		<td><%= profile.name.capitalize %></td>
-		<td><%= profile.description .capitalize%></td>
-    <td><%= link_to 'Delete', profile_path(profile.id), class: 'btn btn-danger', method: :DELETE, data: { confirm: 'Are you sure?' } %></td>
+    <td><%=link_to profile.name.capitalize , profile_path(profile.id)%></a></td>
+		<td><%= profile.description .capitalize%>
+      <%= link_to 'Delete', profile_path(profile.id), class: 'btn btn-danger', style: 'float:right', method: :DELETE, data: { confirm: 'Are you sure?' } %></td>
   	</tr>
 <%end%>
 </table>
 <%= link_to 'Add Your profiles', :new_profile, class: 'btn btn-primary'%>
 <style>
 table {
+  &nbsp
+
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
